@@ -55,16 +55,22 @@ void autonomous(void) {
   int a = vpi::ui::autonSelection;
   if(a == 0) {
     // Do Auton Routine 0
+    printf("Do autonSelection ==  0\n");
   } else if (a == 1) {
     // Do Auton Routine 1
+    printf("Do autonSelection ==  1\n");
   } else if (a == 2) {
     // Do Auton Routine 2
+    printf("Do autonSelection ==  2\n");
   } else if (a == 3) {
     // Do Auton Routine 3
+    printf("Do autonSelection ==  3\n");
   } else if (a == 4) {
     // Do Auton Routine 4
+    printf("Do autonSelection ==  4\n");
   } else if (a == 5) {
     // Do Programming Skills Routine
+    printf("Do Programming Skills\n");
   }
 }
 
