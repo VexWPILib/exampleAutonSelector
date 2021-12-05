@@ -93,7 +93,12 @@ class Spline {
     const auto curvature =
         (dx * ddy - ddx * dy) / ((dx * dx + dy * dy) * std::hypot(dx, dy));
 
+<<<<<<< Updated upstream
     Pose2d p(FromVector(combined.template block<2, 1>(0, 0)), Rotation2d(dx, dy));
+=======
+    Pose2d p(FromVector(combined.template block<2, 1>(0, 0)), Rotation2d(dx, dy),
+            Pose2d::Pose2dCoordinateSystem::VPI_NATIVE);
+>>>>>>> Stashed changes
     Pose2dWithCurvature retval(p, curvature * radpermeter);
     return retval;
   }

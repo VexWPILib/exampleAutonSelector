@@ -53,7 +53,12 @@ class DifferentialDriveOdometry {
                                      const QLength& wheelDiameter,
                                      const Rotation2d& gyroAngle,
                                      const double& gearRatio = 1.0,
+<<<<<<< Updated upstream
                                      const Pose2d& initialPose = Pose2d({0_m, 0_m}, 0_deg));
+=======
+                                     const Pose2d& initialPose = Pose2d({0_m, 0_m}, 0_deg, 
+                                                                        Pose2d::Pose2dCoordinateSystem::VEX_GPS));
+>>>>>>> Stashed changes
 
   /**
    * Resets the robot's position on the field.

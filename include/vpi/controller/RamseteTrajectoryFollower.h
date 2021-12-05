@@ -2,13 +2,19 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the VexWPIApi BSD license file in the root directory of this project.
 
+<<<<<<< Updated upstream
 #pragma once
 
+=======
+>>>>>>> Stashed changes
 #include "vpi/controller/RamseteController.h"
 #include "vpi/chassis/DifferentialDriveChassis.h"
 #include "vpi/kinematics/ChassisSpeeds.h"
 #include "vpi/kinematics/DifferentialDriveWheelSpeeds.h"
+<<<<<<< Updated upstream
 #include "vpi/log/Logger.h"
+=======
+>>>>>>> Stashed changes
 #include "vpi/trajectory/Trajectory.h"
 #include "vpi/units/QTime.h"
 
@@ -24,9 +30,12 @@ class RamseteTrajectoryFollower {
                               double b=2.0, double zeta=0.7) :
         m_chassis(chassis), m_rc(b, zeta) {
       m_rc.SetTolerance(tolerance);
+<<<<<<< Updated upstream
       if(!m_chassis.IsOdomEnabled()) {
         m_chassis.EnableOdom();
       }
+=======
+>>>>>>> Stashed changes
     }
 
     void FollowTrajectory(Trajectory t);

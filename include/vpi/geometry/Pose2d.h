@@ -30,6 +30,7 @@ class VexGpsPose2d;
  */
 class Pose2d {
  public:
+<<<<<<< Updated upstream
   // Conversions between Pose2d and VexGpsPose2d
   // -------------------------------------------
   // Constructor
@@ -39,20 +40,42 @@ class Pose2d {
    // Type-cast
   operator VexGpsPose2d();
   // -------------------------------------------
+=======
+ /**
+  * WPILib assumes a coordinate system where increasing X on the 
+  * horizontal axis would have a heading of 0 degrees, while the
+  * Vex GPS sensor reports this as a heading of 90 degrees.  Given that
+  * users would want to use their familiar co-ordinates and heading,
+  * we will default to VEX_GPS, and ensure that all calls inside this
+  * library use VPI_NATIVE when creating Pose2d objects.
+  */
+  typedef enum {
+      VEX_GPS = 0,
+      VPI_NATIVE = 1
+  } Pose2dCoordinateSystem;
+>>>>>>> Stashed changes
 
   /**
    * Constructs a pose at the origin facing toward the positive X axis.
    * (Translation2d{0, 0} and Rotation{0})
    */
-  constexpr Pose2d() = default;
+  // constexpr Pose2d() = default;
 
   /**
    * Constructs a pose with the specified translation and rotation.
    *
    * @param translation The translational component of the pose.
+<<<<<<< Updated upstream
    * @param r The rotational component of the pose.
    */
   Pose2d(Translation2d translation, Rotation2d r);
+=======
+   * @param rotation The rotational component of the pose.
+   * @param cs Whether the Pose2d is coming from the VEX GPS coordinate system.
+   */
+  Pose2d(Translation2d translation, Rotation2d rotation, 
+          Pose2dCoordinateSystem cs = Pose2d::Pose2dCoordinateSystem::VEX_GPS);
+>>>>>>> Stashed changes
 
   /**
    * Convenience constructors that takes in x and y values directly instead of
@@ -60,9 +83,17 @@ class Pose2d {
    *
    * @param x The x component of the translational component of the pose.
    * @param y The y component of the translational component of the pose.
+<<<<<<< Updated upstream
    * @param r The rotational component of the pose.
    */
   Pose2d(QLength x, QLength y, Rotation2d r);
+=======
+   * @param rotation The rotational component of the pose.
+   * @param cs Whether the Pose2d is coming from the VEX GPS coordinate system.
+   */
+  Pose2d(QLength x, QLength y, Rotation2d rotation, 
+          Pose2dCoordinateSystem cs = Pose2d::Pose2dCoordinateSystem::VEX_GPS);
+>>>>>>> Stashed changes
 
   /**
    * Transforms the pose by the given transformation and returns the new
@@ -224,7 +255,11 @@ struct Pose2dWithCurvature {
   QCurvature curvature;
 
   Pose2dWithCurvature(Pose2d p, QCurvature c) : pose(p), curvature(c) {}
+<<<<<<< Updated upstream
   Pose2dWithCurvature() : pose({0_m, 0_m}, 0_deg),
+=======
+  Pose2dWithCurvature() : pose({0_m, 0_m}, 0_deg, Pose2d::Pose2dCoordinateSystem::VPI_NATIVE),
+>>>>>>> Stashed changes
                           curvature() {}
 };
 
