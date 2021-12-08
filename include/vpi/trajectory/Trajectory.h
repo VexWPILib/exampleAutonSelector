@@ -40,11 +40,7 @@ class Trajectory {
     QAcceleration acceleration = 0_mps2;
 
     // The pose at that point of the trajectory.
-<<<<<<< Updated upstream
     Pose2d pose = Pose2d({0_m, 0_m}, 0_deg);
-=======
-    Pose2d pose = Pose2d({0_m, 0_m}, 0_deg, Pose2d::Pose2dCoordinateSystem::VPI_NATIVE);
->>>>>>> Stashed changes
 
     // The curvature at that point of the trajectory.
     QCurvature curvature = 0.0_radpermeter;

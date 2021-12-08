@@ -114,13 +114,8 @@ class RamseteController {
   double m_b;
   double m_zeta;
 
-<<<<<<< Updated upstream
   Pose2d m_poseError = Pose2d({0_m, 0_m}, 0_deg);
   Pose2d m_poseTolerance = Pose2d({0_m, 0_m}, 0_deg);
-=======
-  Pose2d m_poseError = Pose2d({0_m, 0_m}, 0_deg, Pose2d::Pose2dCoordinateSystem::VPI_NATIVE);
-  Pose2d m_poseTolerance = Pose2d({0_m, 0_m}, 0_deg, Pose2d::Pose2dCoordinateSystem::VPI_NATIVE);
->>>>>>> Stashed changes
   bool m_enabled = true;
 };
 

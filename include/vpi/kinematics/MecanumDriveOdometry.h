@@ -36,12 +36,7 @@ class MecanumDriveOdometry {
    */
   explicit MecanumDriveOdometry(MecanumDriveKinematics kinematics,
                                 const Rotation2d& gyroAngle,
-<<<<<<< Updated upstream
                                 const Pose2d& initialPose = Pose2d({0_m, 0_m}, 0_deg));
-=======
-                                const Pose2d& initialPose = Pose2d({0_m, 0_m}, 0_deg, 
-                                                                  Pose2d::Pose2dCoordinateSystem::VEX_GPS));
->>>>>>> Stashed changes
 
   /**
    * Resets the robot's position on the field.
